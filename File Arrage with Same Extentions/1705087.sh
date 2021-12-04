@@ -25,8 +25,13 @@ then
   file_input_function $INPUT_FILE
 elif (($#==2))
 then
-  DIR_WORKING_INPUT="$1"
   #alias cd $DIR_WORKING_INPUT
+  if [[ -d $1 ]]
+  then
+      DIR_WORKING_INPUT="$1"
+  else
+    echo "As directory given is not correct , Root working dir have been set , Thanku"
+  fi
   INPUT_FILE="$2"
   file_input_function $INPUT_FILE
 else
@@ -83,3 +88,20 @@ find $DIR_WORKING_INPUT -type f ! -name "*.*" -print > ./$DIR_FOR_OUTPUT/others/
 find $DIR_WORKING_INPUT -type f ! -name "*.*" -exec cp {} ./$DIR_FOR_OUTPUT/others \;
 echo "others,${#c[@]}" >> 1705087_output.csv
 
+VAR="find ./working_dir \("
+failed=true
+
+for i in "${arrNotExt[@]}";
+do  
+  if $failed
+  then 
+    VAR+=" -name \"*.\"${i}"
+    failed=false
+  else 
+    VAR+=" -o -name \"*\".${i}"
+  fi
+done
+
+VAR+=" \) -type f| sort -u"
+c=($(eval $VAR))
+echo "ignored,${#c[@]}" >> 1705087_output.csv
