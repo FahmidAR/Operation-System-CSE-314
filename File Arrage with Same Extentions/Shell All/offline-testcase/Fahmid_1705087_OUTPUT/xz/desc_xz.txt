@@ -1,0 +1,3 @@
+./working_dir/directory/subdir3/hw.tar.xz
+./working_dir/my dir/xhw.tar.xz
+./working_dir/my dir/subdir6/xhw.tar.xz

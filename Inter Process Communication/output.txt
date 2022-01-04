@@ -1,0 +1,463 @@
+1705087 - FAHMID - IPC 
+
+Total Kiosk no in Airpot = 5
+Total Belt no in Airpot = 2
+Belt Capacity in Airpot = 3
+Vip Walkway in Airpot = 1
+Special Kiosk in Airpot = 1
+
+Kiosk Time in Airpot = 30
+Belt Time in Airpot =5
+Boarding Time in Airpot =1
+Vip Walkway Time in Airpot = 20
+
+
+->A Passenger(VIP) 1 ARRIVED at the AIRPORT at 0
+
+->K Passenger(VIP) 1 has STARTED SELF-CHECK  in at KIOSK 1 at 0
+
+->A Passenger 2 ARRIVED at the AIRPORT at 2
+
+->K Passenger 2 has STARTED SELF-CHECK in at KIOSK 2 at 2
+
+->A Passenger 3 ARRIVED at the AIRPORT at 5
+
+->K Passenger 3 has STARTED SELF-CHECK in at KIOSK 3 at 5
+
+->A Passenger 4 ARRIVED at the AIRPORT at 6
+
+->K Passenger 4 has STARTED SELF-CHECK in at KIOSK 4 at 6
+
+->A Passenger 5 ARRIVED at the AIRPORT at 7
+
+->K Passenger 5 has STARTED SELF-CHECK in at KIOSK 5 at 7
+
+->A Passenger 6 ARRIVED at the AIRPORT at 12
+
+->A Passenger 7 ARRIVED at the AIRPORT at 17
+
+->A Passenger 8 ARRIVED at the AIRPORT at 21
+
+->A Passenger(VIP) 9 ARRIVED at the AIRPORT at 23
+
+->A Passenger 10 ARRIVED at the AIRPORT at 25
+
+->A Passenger 11 ARRIVED at the AIRPORT at 26
+
+->A Passenger 12 ARRIVED at the AIRPORT at 28
+
+K-> Passenger(VIP) 1 has FINISHED CHECK in at time 30
+
+->WVL Passenger(VIP) 1 started WAITING in VIP channel (LEFT) at time 30
+
+->VL Passenger(VIP) 1 started WALKING in VIP channel (LEFT) at time 30
+
+->K Passenger 6 has STARTED SELF-CHECK in at KIOSK 1 at 30
+
+->A Passenger 13 ARRIVED at the AIRPORT at 31
+
+K-> Passenger 2 has FINISHED CHECK in at time 32
+
+->WS Passenger 2 started WAITING for SECURITY-CHECK from time 32
+
+->S Passenger 2 has STARTED SECURITY-CHECK  in at BELT 2 at 32
+
+->K Passenger 7 has STARTED SELF-CHECK in at KIOSK 2 at 32
+
+K-> Passenger 3 has FINISHED CHECK in at time 35
+
+->WS Passenger 3 started WAITING for SECURITY-CHECK from time 35
+
+->S Passenger 3 has STARTED SECURITY-CHECK  in at BELT 1 at 35
+
+->K Passenger 8 has STARTED SELF-CHECK in at KIOSK 3 at 35
+
+K-> Passenger 4 has FINISHED CHECK in at time 36
+
+->WS Passenger 4 started WAITING for SECURITY-CHECK from time 36
+
+->S Passenger 4 has STARTED SECURITY-CHECK  in at BELT 2 at 36
+
+->K Passenger(VIP) 9 has STARTED SELF-CHECK  in at KIOSK 4 at 36
+
+S-> Passenger 2 has CROSSED the SECURITY-CHECK  in at time 37
+
+->WB Passenger 2 has started WAITING to be boarded at time 37
+
+->B Passenger 2 has started BOARDING the plane at time 37
+
+K-> Passenger 5 has FINISHED CHECK in at time 37
+
+->WS Passenger 5 started WAITING for SECURITY-CHECK from time 37
+
+->S Passenger 5 has STARTED SECURITY-CHECK  in at BELT 1 at 37
+
+->K Passenger 10 has STARTED SELF-CHECK in at KIOSK 5 at 37
+
+->A Passenger 14 ARRIVED at the AIRPORT at 37
+
+B-> Passenger 2 has BOARDED the plane at time 38
+
+->A Passenger 15 ARRIVED at the AIRPORT at 39
+
+->A Passenger 16 ARRIVED at the AIRPORT at 39
+
+S-> Passenger 3 has CROSSED the SECURITY-CHECK  in at time 40
+
+->WVR Passenger 3 has FORGOTED boarding pass, WAITING in VIP channel (RIGHT) at time 40
+
+S-> Passenger 4 has CROSSED the SECURITY-CHECK  in at time 41
+
+->WB Passenger 4 has started WAITING to be boarded at time 41
+
+->B Passenger 4 has started BOARDING the plane at time 41
+
+S-> Passenger 5 has CROSSED the SECURITY-CHECK  in at time 42
+
+->WVR Passenger 5 has FORGOTED boarding pass, WAITING in VIP channel (RIGHT) at time 42
+
+B-> Passenger 4 has BOARDED the plane at time 42
+
+->A Passenger 17 ARRIVED at the AIRPORT at 44
+
+->A Passenger 18 ARRIVED at the AIRPORT at 47
+
+VL-> Passenger(VIP) 1 has CROSSED the VIP channel (LEFT)  in at time 50
+
+->WB Passenger(VIP) 1 has started WAITING to be boarded at time 50
+
+->B Passenger(VIP) 1 has started BOARDING the plane at time 50
+
+->VR Passenger 3 started WALKING in VIP channel (RIGHT) at time 50
+
+->VR Passenger 5 started WALKING in VIP channel (RIGHT) at time 50
+
+B-> Passenger(VIP) 1 has BOARDED the plane at time 51
+
+->A Passenger(VIP) 19 ARRIVED at the AIRPORT at 51
+
+->A Passenger(VIP) 20 ARRIVED at the AIRPORT at 54
+
+K-> Passenger 6 has FINISHED CHECK in at time 60
+
+->WS Passenger 6 started WAITING for SECURITY-CHECK from time 60
+
+->S Passenger 6 has STARTED SECURITY-CHECK  in at BELT 2 at 60
+
+->K Passenger 11 has STARTED SELF-CHECK in at KIOSK 1 at 60
+
+K-> Passenger 7 has FINISHED CHECK in at time 62
+
+->WS Passenger 7 started WAITING for SECURITY-CHECK from time 62
+
+->S Passenger 7 has STARTED SECURITY-CHECK  in at BELT 1 at 62
+
+->K Passenger 12 has STARTED SELF-CHECK in at KIOSK 2 at 62
+
+S-> Passenger 6 has CROSSED the SECURITY-CHECK  in at time 65
+
+->WB Passenger 6 has started WAITING to be boarded at time 65
+
+->B Passenger 6 has started BOARDING the plane at time 65
+
+K-> Passenger 8 has FINISHED CHECK in at time 65
+
+->WS Passenger 8 started WAITING for SECURITY-CHECK from time 65
+
+->S Passenger 8 has STARTED SECURITY-CHECK  in at BELT 2 at 65
+
+->K Passenger 13 has STARTED SELF-CHECK in at KIOSK 3 at 65
+
+B-> Passenger 6 has BOARDED the plane at time 66
+
+K-> Passenger(VIP) 9 has FINISHED CHECK in at time 66
+
+->WVL Passenger(VIP) 9 started WAITING in VIP channel (LEFT) at time 66
+
+->K Passenger 14 has STARTED SELF-CHECK in at KIOSK 4 at 66
+
+S-> Passenger 7 has CROSSED the SECURITY-CHECK  in at time 67
+
+->WVR Passenger 7 has FORGOTED boarding pass, WAITING in VIP channel (RIGHT) at time 67
+
+K-> Passenger 10 has FINISHED CHECK in at time 67
+
+->WS Passenger 10 started WAITING for SECURITY-CHECK from time 67
+
+->S Passenger 10 has STARTED SECURITY-CHECK  in at BELT 1 at 67
+
+->K Passenger 15 has STARTED SELF-CHECK in at KIOSK 5 at 67
+
+VR-> Passenger 5 has CROSSED the VIP channel (RIGHT)  in at time 70
+
+->WSK Passenger 5 started WAITING for RE-SELF-CHECK in SPECIAL KIOSK from time 70
+
+->SK Passenger 5 has STARTED RE-SELF-CHECK in SPECIAL KIOSK at 70
+
+VR-> Passenger 3 has CROSSED the VIP channel (RIGHT)  in at time 70
+
+->WSK Passenger 3 started WAITING for RE-SELF-CHECK in SPECIAL KIOSK from time 70
+
+->VL Passenger(VIP) 9 started WALKING in VIP channel (LEFT) at time 70
+
+S-> Passenger 8 has CROSSED the SECURITY-CHECK  in at time 70
+
+->WB Passenger 8 has started WAITING to be boarded at time 70
+
+->B Passenger 8 has started BOARDING the plane at time 70
+
+B-> Passenger 8 has BOARDED the plane at time 71
+
+S-> Passenger 10 has CROSSED the SECURITY-CHECK  in at time 72
+
+->WB Passenger 10 has started WAITING to be boarded at time 72
+
+->B Passenger 10 has started BOARDING the plane at time 72
+
+B-> Passenger 10 has BOARDED the plane at time 73
+
+K-> Passenger 11 has FINISHED CHECK in at time 90
+
+->WS Passenger 11 started WAITING for SECURITY-CHECK from time 90
+
+->S Passenger 11 has STARTED SECURITY-CHECK  in at BELT 2 at 90
+
+->K Passenger 16 has STARTED SELF-CHECK in at KIOSK 1 at 90
+
+VL-> Passenger(VIP) 9 has CROSSED the VIP channel (LEFT)  in at time 90
+
+->WB Passenger(VIP) 9 has started WAITING to be boarded at time 90
+
+->B Passenger(VIP) 9 has started BOARDING the plane at time 90
+
+->VR Passenger 7 started WALKING in VIP channel (RIGHT) at time 90
+
+B-> Passenger(VIP) 9 has BOARDED the plane at time 91
+
+K-> Passenger 12 has FINISHED CHECK in at time 92
+
+->WS Passenger 12 started WAITING for SECURITY-CHECK from time 92
+
+->S Passenger 12 has STARTED SECURITY-CHECK  in at BELT 1 at 92
+
+->K Passenger 17 has STARTED SELF-CHECK in at KIOSK 2 at 92
+
+S-> Passenger 11 has CROSSED the SECURITY-CHECK  in at time 95
+
+->WB Passenger 11 has started WAITING to be boarded at time 95
+
+->B Passenger 11 has started BOARDING the plane at time 95
+
+K-> Passenger 13 has FINISHED CHECK in at time 95
+
+->WS Passenger 13 started WAITING for SECURITY-CHECK from time 95
+
+->S Passenger 13 has STARTED SECURITY-CHECK  in at BELT 2 at 95
+
+->K Passenger 18 has STARTED SELF-CHECK in at KIOSK 3 at 95
+
+B-> Passenger 11 has BOARDED the plane at time 96
+
+K-> Passenger 14 has FINISHED CHECK in at time 96
+
+->WS Passenger 14 started WAITING for SECURITY-CHECK from time 96
+
+->S Passenger 14 has STARTED SECURITY-CHECK  in at BELT 1 at 96
+
+->K Passenger(VIP) 19 has STARTED SELF-CHECK  in at KIOSK 4 at 96
+
+S-> Passenger 12 has CROSSED the SECURITY-CHECK  in at time 97
+
+->WB Passenger 12 has started WAITING to be boarded at time 97
+
+->B Passenger 12 has started BOARDING the plane at time 97
+
+K-> Passenger 15 has FINISHED CHECK in at time 97
+
+->WS Passenger 15 started WAITING for SECURITY-CHECK from time 97
+
+->S Passenger 15 has STARTED SECURITY-CHECK  in at BELT 2 at 97
+
+->K Passenger(VIP) 20 has STARTED SELF-CHECK  in at KIOSK 5 at 97
+
+B-> Passenger 12 has BOARDED the plane at time 98
+
+SK-> Passenger 5 has FINISHED CHECK in at time 100
+
+->WVLF Passenger 5 started Re-WAITING in VIP channel (LEFT) at time 100
+
+->VLF Passenger 5 started Re-WALKING in VIP channel (LEFT) at time 100
+
+->SK Passenger 3 has STARTED RE-SELF-CHECK in SPECIAL KIOSK at 100
+
+S-> Passenger 13 has CROSSED the SECURITY-CHECK  in at time 100
+
+->WVR Passenger 13 has FORGOTED boarding pass, WAITING in VIP channel (RIGHT) at time 100
+
+S-> Passenger 14 has CROSSED the SECURITY-CHECK  in at time 101
+
+->WB Passenger 14 has started WAITING to be boarded at time 101
+
+->B Passenger 14 has started BOARDING the plane at time 101
+
+S-> Passenger 15 has CROSSED the SECURITY-CHECK  in at time 102
+
+->WB Passenger 15 has started WAITING to be boarded at time 102
+
+B-> Passenger 14 has BOARDED the plane at time 102
+
+->B Passenger 15 has started BOARDING the plane at time 102
+
+B-> Passenger 15 has BOARDED the plane at time 103
+
+VR-> Passenger 7 has CROSSED the VIP channel (RIGHT)  in at time 110
+
+->WSK Passenger 7 started WAITING for RE-SELF-CHECK in SPECIAL KIOSK from time 110
+
+K-> Passenger 16 has FINISHED CHECK in at time 120
+
+->WS Passenger 16 started WAITING for SECURITY-CHECK from time 120
+
+->S Passenger 16 has STARTED SECURITY-CHECK  in at BELT 1 at 120
+
+K-> Passenger 17 has FINISHED CHECK in at time 122
+
+->WS Passenger 17 started WAITING for SECURITY-CHECK from time 122
+
+->S Passenger 17 has STARTED SECURITY-CHECK  in at BELT 2 at 122
+
+S-> Passenger 16 has CROSSED the SECURITY-CHECK  in at time 125
+
+->WB Passenger 16 has started WAITING to be boarded at time 125
+
+->B Passenger 16 has started BOARDING the plane at time 125
+
+K-> Passenger 18 has FINISHED CHECK in at time 125
+
+->WS Passenger 18 started WAITING for SECURITY-CHECK from time 125
+
+->S Passenger 18 has STARTED SECURITY-CHECK  in at BELT 1 at 125
+
+B-> Passenger 16 has BOARDED the plane at time 126
+
+K-> Passenger(VIP) 19 has FINISHED CHECK in at time 126
+
+->WVL Passenger(VIP) 19 started WAITING in VIP channel (LEFT) at time 126
+
+->VL Passenger(VIP) 19 started WALKING in VIP channel (LEFT) at time 126
+
+S-> Passenger 17 has CROSSED the SECURITY-CHECK  in at time 127
+
+->WB Passenger 17 has started WAITING to be boarded at time 127
+
+->B Passenger 17 has started BOARDING the plane at time 127
+
+K-> Passenger(VIP) 20 has FINISHED CHECK in at time 127
+
+->WVL Passenger(VIP) 20 started WAITING in VIP channel (LEFT) at time 127
+
+->VL Passenger(VIP) 20 started WALKING in VIP channel (LEFT) at time 127
+
+B-> Passenger 17 has BOARDED the plane at time 128
+
+SK-> Passenger 3 has FINISHED CHECK in at time 130
+
+->WVLF Passenger 3 started Re-WAITING in VIP channel (LEFT) at time 130
+
+->VLF Passenger 3 started Re-WALKING in VIP channel (LEFT) at time 130
+
+->SK Passenger 7 has STARTED RE-SELF-CHECK in SPECIAL KIOSK at 130
+
+VLF-> Passenger 5 has Re-CROSSED the VIP channel (LEFT)  in at time 130
+
+->WB Passenger 5 has started WAITING to be boarded at time 130
+
+->B Passenger 5 has started BOARDING the plane at time 130
+
+S-> Passenger 18 has CROSSED the SECURITY-CHECK  in at time 130
+
+->WB Passenger 18 has started WAITING to be boarded at time 130
+
+B-> Passenger 5 has BOARDED the plane at time 131
+
+->B Passenger 18 has started BOARDING the plane at time 131
+
+B-> Passenger 18 has BOARDED the plane at time 132
+
+VL-> Passenger(VIP) 19 has CROSSED the VIP channel (LEFT)  in at time 146
+
+->WB Passenger(VIP) 19 has started WAITING to be boarded at time 146
+
+->B Passenger(VIP) 19 has started BOARDING the plane at time 146
+
+VL-> Passenger(VIP) 20 has CROSSED the VIP channel (LEFT)  in at time 147
+
+->WB Passenger(VIP) 20 has started WAITING to be boarded at time 147
+
+B-> Passenger(VIP) 19 has BOARDED the plane at time 147
+
+->B Passenger(VIP) 20 has started BOARDING the plane at time 147
+
+B-> Passenger(VIP) 20 has BOARDED the plane at time 148
+
+VLF-> Passenger 3 has Re-CROSSED the VIP channel (LEFT)  in at time 150
+
+->WB Passenger 3 has started WAITING to be boarded at time 150
+
+->B Passenger 3 has started BOARDING the plane at time 150
+
+->VR Passenger 13 started WALKING in VIP channel (RIGHT) at time 150
+
+B-> Passenger 3 has BOARDED the plane at time 151
+
+SK-> Passenger 7 has FINISHED CHECK in at time 160
+
+->WVLF Passenger 7 started Re-WAITING in VIP channel (LEFT) at time 160
+
+->VLF Passenger 7 started Re-WALKING in VIP channel (LEFT) at time 160
+
+VR-> Passenger 13 has CROSSED the VIP channel (RIGHT)  in at time 170
+
+->WSK Passenger 13 started WAITING for RE-SELF-CHECK in SPECIAL KIOSK from time 170
+
+->SK Passenger 13 has STARTED RE-SELF-CHECK in SPECIAL KIOSK at 170
+
+VLF-> Passenger 7 has Re-CROSSED the VIP channel (LEFT)  in at time 190
+
+->WB Passenger 7 has started WAITING to be boarded at time 190
+
+->B Passenger 7 has started BOARDING the plane at time 190
+
+B-> Passenger 7 has BOARDED the plane at time 191
+
+SK-> Passenger 13 has FINISHED CHECK in at time 200
+
+->WVLF Passenger 13 started Re-WAITING in VIP channel (LEFT) at time 200
+
+->VLF Passenger 13 started Re-WALKING in VIP channel (LEFT) at time 200
+
+VLF-> Passenger 13 has Re-CROSSED the VIP channel (LEFT)  in at time 220
+
+->WVR Passenger 13 has FORGOTED boarding pass, WAITING in VIP channel (RIGHT) at time 220
+
+->VR Passenger 13 started WALKING in VIP channel (RIGHT) at time 220
+
+VR-> Passenger 13 has CROSSED the VIP channel (RIGHT)  in at time 240
+
+->WSK Passenger 13 started WAITING for RE-SELF-CHECK in SPECIAL KIOSK from time 240
+
+->SK Passenger 13 has STARTED RE-SELF-CHECK in SPECIAL KIOSK at 240
+
+SK-> Passenger 13 has FINISHED CHECK in at time 270
+
+->WVLF Passenger 13 started Re-WAITING in VIP channel (LEFT) at time 270
+
+->VLF Passenger 13 started Re-WALKING in VIP channel (LEFT) at time 270
+
+VLF-> Passenger 13 has Re-CROSSED the VIP channel (LEFT)  in at time 290
+
+->WB Passenger 13 has started WAITING to be boarded at time 290
+
+->B Passenger 13 has started BOARDING the plane at time 290
+
+B-> Passenger 13 has BOARDED the plane at time 291

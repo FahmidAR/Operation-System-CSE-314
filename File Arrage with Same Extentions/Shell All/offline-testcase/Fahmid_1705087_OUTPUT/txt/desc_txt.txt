@@ -1,0 +1,3 @@
+./working_dir/directory/homework_08.txt
+./working_dir/directory/homework_04.txt
+./working_dir/dir1/resources.txt

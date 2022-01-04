@@ -1,0 +1,5 @@
+./working_dir/directory/subdir5/pdfs3.pdf
+./working_dir/directory/subdir4/subsubdir1/pdfs2.pdf
+./working_dir/dir1/my sub folder/pd fs4.pdf
+./working_dir/dir1/my sub folder/pdfs1.pdf
+./working_dir/my dir/subdir6/pdfs5.pdf

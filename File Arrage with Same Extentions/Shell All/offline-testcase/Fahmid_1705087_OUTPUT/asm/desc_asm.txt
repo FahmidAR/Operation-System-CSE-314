@@ -1,0 +1,3 @@
+./working_dir/colorsG.asm
+./working_dir/dir1/sub dir1/bounceG.asm
+./working_dir/dir1/timeG.asm

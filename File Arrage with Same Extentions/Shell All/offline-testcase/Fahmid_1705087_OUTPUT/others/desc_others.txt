@@ -1,0 +1,4 @@
+./working_dir/txt
+./working_dir/dir1/zip
+./working_dir/my dir/cpp
+./working_dir/my dir/subdir6/cpp
