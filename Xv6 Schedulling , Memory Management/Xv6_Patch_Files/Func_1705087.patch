@@ -1,0 +1,621 @@
+diff --git a/31-Plan.c b/31-Plan.c
+new file mode 100644
+index 0000000..14b5006
+--- /dev/null
++++ b/31-Plan.c
+@@ -0,0 +1,26 @@
++#include "types.h"
++#include "stat.h"
++#include "user.h"
++
++int main(int argc, char *argv[])
++{
++    if(argc <= 0){
++    exit();
++    }
++
++    int i;
++    //int n = (int) argv[1];
++    //long arg = strtol(argv[1], NULL, 10);
++    int n = atoi(argv[1]); 
++
++    for(i = n-1; i >=0; i--){
++        printf(1, "Happy NEW YEAR  2022 !!! say = %d >-<\n", i);
++    }
++
++    if(argc >= 2){
++        n = atoi(argv[2]); 
++        printf(1, "\n Hey !! Love you !!! %d  Times  >-<\n", n);
++    }
++
++    exit();
++}
+\ No newline at end of file
+diff --git a/Makefile b/Makefile
+index 09d790c..2afcd5e 100644
+--- a/Makefile
++++ b/Makefile
+@@ -52,6 +52,7 @@ endif
+ 
+ # If the makefile can't find QEMU, specify its path here
+ # QEMU = qemu-system-i386
++ QEMU = qemu-system-x86_64
+ 
+ # Try to infer the correct QEMU
+ ifndef QEMU
+@@ -166,10 +167,15 @@ mkfs: mkfs.c fs.h
+ .PRECIOUS: %.o
+ 
+ UPROGS=\
++	_arrsum\
++	_bye\
+ 	_cat\
++	_calculation\
+ 	_echo\
++	_fahmidSID\
+ 	_forktest\
+ 	_grep\
++	_inc\
+ 	_init\
+ 	_kill\
+ 	_ln\
+@@ -177,10 +183,15 @@ UPROGS=\
+ 	_mkdir\
+ 	_rm\
+ 	_sh\
++	_shutdown\
+ 	_stressfs\
++	_substr\
++	_testb1\
+ 	_usertests\
+ 	_wc\
+ 	_zombie\
++	_31-Plan\
++	
+ 
+ fs.img: mkfs README $(UPROGS)
+ 	./mkfs fs.img README $(UPROGS)
+@@ -248,9 +259,9 @@ qemu-nox-gdb: fs.img xv6.img .gdbinit
+ # check in that version.
+ 
+ EXTRA=\
+-	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
+-	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c\
+-	printf.c umalloc.c\
++	mkfs.c ulib.c user.h cat.c 31-Plan.c echo.c forktest.c grep.c kill.c substr.c\
++	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c fahmidSID.c\
++	printf.c bye.c calculation.c shutdown.c umalloc.c inc.c arrsum.c testb1.c\
+ 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
+ 	.gdbinit.tmpl gdbutil\
+ 
+diff --git a/arrsum.c b/arrsum.c
+new file mode 100644
+index 0000000..9b9523c
+--- /dev/null
++++ b/arrsum.c
+@@ -0,0 +1,21 @@
++#include "types.h"
++#include "stat.h"
++#include "user.h"
++
++int main(int argc, char *argv[])
++{
++    int sum=0;
++    int i=0 , arr[argc-1];
++
++    for(i = 1; i < argc; i++){
++        arr[i-1]=atoi(argv[i]); 
++        sum+=arr[i-1];
++    }
++
++    printf(1, "Happy USER sum !!! = %d >-<\n", sum);
++    printf(1, "Happy SYS  sum !!! = %d >-<\n", arrsum(arr,argc-1));
++    
++
++
++    exit();
++}
+\ No newline at end of file
+diff --git a/bye.c b/bye.c
+new file mode 100644
+index 0000000..8f20c29
+--- /dev/null
++++ b/bye.c
+@@ -0,0 +1,20 @@
++#include "types.h"
++#include "stat.h"
++#include "user.h"
++
++int main(int argc, char * argv[])
++{
++    if(argc <= 1){
++    
++    printf(1, "Have Good a Day Fahmid !! \n");
++    shut();
++    exit();
++    }
++    else
++    {
++    printf(1, "Have Good a Day %s !! \n",argv[1]);
++    shut();
++    exit();
++    }
++    
++}
+\ No newline at end of file
+diff --git a/calculation.c b/calculation.c
+new file mode 100644
+index 0000000..bc51156
+--- /dev/null
++++ b/calculation.c
+@@ -0,0 +1,29 @@
++#include "types.h"
++#include "stat.h"
++#include "user.h"
++
++int main(int argc, char *argv[])
++{
++    if(argc <= 0){
++    exit();
++    }
++
++    printf(1, "Process id  = %d \n", getpid());
++    printf(1, "Process size  = %d \n", getpsize());
++
++    int a = atoi(argv[2]);
++    int b = atoi(argv[3]); 
++
++    if(!strcmp("sum",argv[1]))
++    {
++        printf(1, "Sum by User  = %d >-<\n", a+b);
++        printf(1, "Sum by Sys  = %d >-<\n", sum(a,b));
++    }
++    else
++    {
++        printf(1, "Sub by User  = %d >-<\n", a-b);
++        printf(1, "Sub by Sys  = %d >-<\n", sub(a,b));
++    }
++
++    exit();
++}
+\ No newline at end of file
+diff --git a/fahmidSID.c b/fahmidSID.c
+new file mode 100644
+index 0000000..731bec7
+--- /dev/null
++++ b/fahmidSID.c
+@@ -0,0 +1,23 @@
++#include "types.h"
++#include "user.h"
++#include "fcntl.h"
++
++int main(){
++    printf(1 , " Total Read count untill now = %d\n" ,readCount());
++
++    printf(1 , " Fahmid std id = %d\n" ,fahmidsid());
++    printf(1 , " Fahmid std rnd = %d\n" ,fahmidrnd());
++
++    int sum = 0 , temp =fahmidsid();
++
++    while(temp)
++    {
++        sum+=temp%10;
++        temp=temp/10;
++    }
++
++    printf(1 , " Fahmid std sum = %d\n" ,sum);
++    printf(1 , " Fahmid std reminder = %d\n" ,fahmidsid()%fahmidrnd());
++
++    exit();
++}
+\ No newline at end of file
+diff --git a/inc.c b/inc.c
+new file mode 100644
+index 0000000..afb0a44
+--- /dev/null
++++ b/inc.c
+@@ -0,0 +1,8 @@
++#include "types.h"
++#include "user.h"
++#include "fcntl.h"
++
++int main(int argc , char * argv[]){
++    printf(1 , "%d\n" , incr(atoi(argv[1])));
++    exit();
++}
+\ No newline at end of file
+diff --git a/shutdown.c b/shutdown.c
+new file mode 100644
+index 0000000..938337e
+--- /dev/null
++++ b/shutdown.c
+@@ -0,0 +1,10 @@
++#include "types.h"
++#include "stat.h"
++#include "user.h"
++
++int main(int argc, char * argv[])
++{
++    printf(1, "Exiting Xv6 operating system !! \n");
++    shut();
++    exit();//eq to return zero
++}
+\ No newline at end of file
+diff --git a/substr.c b/substr.c
+new file mode 100644
+index 0000000..2234fd3
+--- /dev/null
++++ b/substr.c
+@@ -0,0 +1,11 @@
++#include "types.h"
++#include "user.h"
++#include "fcntl.h"
++
++int main(int argc, char * argv[]){
++
++    printf(1 , " The String = %s\n" ,argv[1]);
++    printf(1 , " The Sub String = %s\n" ,substr(argv[1],atoi(argv[2]),atoi(argv[3])));
++
++    exit();
++}
+\ No newline at end of file
+diff --git a/syscall.c b/syscall.c
+index ee85261..44ae7fc 100644
+--- a/syscall.c
++++ b/syscall.c
+@@ -103,6 +103,19 @@ extern int sys_unlink(void);
+ extern int sys_wait(void);
+ extern int sys_write(void);
+ extern int sys_uptime(void);
++extern int sys_getpsize(void);
++extern int sys_sum(void);
++extern int sys_sub(void);
++extern int sys_shut(void);
++extern int sys_incr(void);
++extern int sys_fahmidsid(void);
++extern int sys_fahmidrnd(void);
++extern int sys_readCount(void);
++extern int sys_arrsum(void);
++extern int sys_substr(void);
++extern int sys_mult(void);
++extern int sys_div(void);
++extern int sys_mod(void);
+ 
+ static int (*syscalls[])(void) = {
+ [SYS_fork]    sys_fork,
+@@ -126,6 +139,19 @@ static int (*syscalls[])(void) = {
+ [SYS_link]    sys_link,
+ [SYS_mkdir]   sys_mkdir,
+ [SYS_close]   sys_close,
++[SYS_getpsize]  sys_getpsize,
++[SYS_sum]  sys_sum,
++[SYS_sub]  sys_sub,
++[SYS_shut]  sys_shut,
++[SYS_incr]  sys_incr,
++[SYS_fahmidsid]  sys_fahmidsid,
++[SYS_fahmidrnd]  sys_fahmidrnd,
++[SYS_readCount]  sys_readCount,
++[SYS_arrsum]  sys_arrsum,
++[SYS_substr]  sys_substr,
++[SYS_mult]  sys_mult,
++[SYS_div]  sys_div,
++[SYS_mod]  sys_mod,
+ };
+ 
+ void
+diff --git a/syscall.h b/syscall.h
+index bc5f356..9822b87 100644
+--- a/syscall.h
++++ b/syscall.h
+@@ -20,3 +20,16 @@
+ #define SYS_link   19
+ #define SYS_mkdir  20
+ #define SYS_close  21
++#define SYS_getpsize  22
++#define SYS_sum  23
++#define SYS_sub  24
++#define SYS_shut  25
++#define SYS_incr  26
++#define SYS_fahmidsid  27
++#define SYS_fahmidrnd  28
++#define SYS_readCount  29
++#define SYS_arrsum  30
++#define SYS_substr  31
++#define SYS_mult  32
++#define SYS_div  33
++#define SYS_mod  34
+diff --git a/sysfile.c b/sysfile.c
+index bfe61b7..b0f6c1f 100644
+--- a/sysfile.c
++++ b/sysfile.c
+@@ -16,6 +16,8 @@
+ #include "file.h"
+ #include "fcntl.h"
+ 
++int readCount = 0; 
++
+ // Fetch the nth word-sized system call argument as a file descriptor
+ // and return both the descriptor and the corresponding struct file.
+ static int
+@@ -66,9 +68,11 @@ sys_dup(void)
+   return fd;
+ }
+ 
++
+ int
+ sys_read(void)
+ {
++  readCount++;
+   struct file *f;
+   int n;
+   char *p;
+@@ -78,6 +82,12 @@ sys_read(void)
+   return fileread(f, p, n);
+ }
+ 
++int
++sys_readCount(void)
++{
++  return readCount;
++}
++
+ int
+ sys_write(void)
+ {
+diff --git a/sysproc.c b/sysproc.c
+index 0686d29..c4b50e7 100644
+--- a/sysproc.c
++++ b/sysproc.c
+@@ -36,12 +36,145 @@ sys_kill(void)
+   return kill(pid);
+ }
+ 
++int
++sys_arrsum(void)
++{
++  int sum=0 , i , size , *arr;
++
++  if(argint(0, (int*)&arr) < 0)
++    return -1;
++    
++  if(argint(1, &size) < 0)
++    return -1;
++    
++  for(i = 1; i <=size; i++){ 
++        sum+=arr[i-1];
++    }  
++ 
++  
++  return sum;
++}
++
++int
++sys_fahmidsid(void)
++{
++  return 1705087;
++}
++
++int
++sys_fahmidrnd(void)
++{
++
++  int i , m=1705087 , c=11 , a=5 ,x=1705087;
++  
++  for(i = 1;i<=501;i++)
++  {
++  	x=(a*x+c)%m;
++  }
++  return x;
++}
++
+ int
+ sys_getpid(void)
+ {
+   return myproc()->pid;
+ }
+ 
++char* sys_substr(void){
++  static char *str;
++  int start_idx , len;
++  
++  argint(1 , &start_idx);
++  argint(2 , &len);
++  argstr(0 , &str);
++  char* s = &str[0];
++  int i;
++  int k = 0;
++  for(i = start_idx ; i < start_idx+len ; i++){
++    s[k++] = str[i];
++  }
++  s[k]='\0';
++  return s;
++}
++
++
++void sys_shut(void){
++  outw(0xB004, 0x0|0x2000);
++  outw(0x604, 0x0|0x2000);
++}
++
++int
++sys_sum(void)
++{
++  int a , b; 
++  if(argint(0, &a) < 0)
++    return -1;
++  if(argint(1, &b) < 0)
++    return -1;
++  return a+b;
++}
++
++int
++sys_mult(void)
++{
++  int a , b; 
++  if(argint(0, &a) < 0)
++    return -1;
++  if(argint(1, &b) < 0)
++    return -1;
++  return a*b;
++}
++
++int
++sys_div(void)
++{
++  int a , b; 
++  if(argint(0, &a) < 0)
++    return -1;
++  if(argint(1, &b) < 0)
++    return -1;
++  return a/b;
++}
++
++int
++sys_mod(void)
++{
++  int a , b; 
++  if(argint(0, &a) < 0)
++    return -1;
++  if(argint(1, &b) < 0)
++    return -1;
++  return a%b;
++}
++
++int
++sys_incr(void)
++{
++  int a ; 
++  if(argint(0, &a) < 0)
++    return -1;
++  return a+1;
++}
++
++int
++sys_sub(void)
++{
++  int a , b;
++  if(argint(0, &a) < 0)
++    return -1;
++  if(argint(1, &b) < 0)
++    return -1;
++  return a-b;
++}
++
++
++
++int
++sys_getpsize(void)
++{
++  return myproc()->sz;
++}
++
+ int
+ sys_sbrk(void)
+ {
+diff --git a/testb1.c b/testb1.c
+new file mode 100644
+index 0000000..40368a8
+--- /dev/null
++++ b/testb1.c
+@@ -0,0 +1,28 @@
++#include "types.h"
++#include "stat.h"
++#include "user.h"
++
++int main(int argc, char *argv[])
++{
++    if(argc <= 0){
++    exit();
++    }
++
++    int a = atoi(argv[2]);
++    int b = atoi(argv[3]); 
++
++    if(!strcmp("p",argv[1]))
++    {
++        printf(1, "Mult by Sys  = %d \n", mult(a,b));
++    }
++    else if(!strcmp("d",argv[1]))
++    {
++        printf(1, "Div by Sys  = %d \n", div(a,b));
++    }
++    else
++    {
++        printf(1, "Mod by Sys  = %d \n", mod(a,b));
++    }
++
++    exit();
++}
+\ No newline at end of file
+diff --git a/ulib.c b/ulib.c
+index 8e1e1a2..b280a42 100644
+--- a/ulib.c
++++ b/ulib.c
+@@ -84,12 +84,19 @@ stat(const char *n, struct stat *st)
+ int
+ atoi(const char *s)
+ {
+-  int n;
+-
++  int n , sign = 1;
+   n = 0;
++  
++  if(*s == '-')
++  {
++     sign=-1;
++     s++;
++  }
++  
+   while('0' <= *s && *s <= '9')
+     n = n*10 + *s++ - '0';
+-  return n;
++    
++  return n*sign;
+ }
+ 
+ void*
+diff --git a/user.h b/user.h
+index 4f99c52..b7179bd 100644
+--- a/user.h
++++ b/user.h
+@@ -23,6 +23,19 @@ int getpid(void);
+ char* sbrk(int);
+ int sleep(int);
+ int uptime(void);
++int getpsize(void);
++int sum(int,int);
++int sub(int,int);
++int shut(void);
++int incr(int);
++int fahmidsid(void);
++int fahmidrnd(void);
++int readCount(void);
++int arrsum(int*,int);
++char* substr(char*,int,int);
++int mult(int,int);
++int div(int,int);
++int mod(int,int);
+ 
+ // ulib.c
+ int stat(const char*, struct stat*);
+diff --git a/usys.S b/usys.S
+index 8bfd8a1..8065667 100644
+--- a/usys.S
++++ b/usys.S
+@@ -29,3 +29,16 @@ SYSCALL(getpid)
+ SYSCALL(sbrk)
+ SYSCALL(sleep)
+ SYSCALL(uptime)
++SYSCALL(getpsize)
++SYSCALL(sum)
++SYSCALL(sub)
++SYSCALL(shut)
++SYSCALL(incr)
++SYSCALL(fahmidsid)
++SYSCALL(fahmidrnd)
++SYSCALL(readCount)
++SYSCALL(arrsum)
++SYSCALL(substr)
++SYSCALL(mult)
++SYSCALL(div)
++SYSCALL(mod)
