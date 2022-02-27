@@ -1,0 +1,22 @@
+spaces="_"
+
+func(){
+  list=( $(ls) )
+  for i in ${list[@]}
+  do
+      if [[ "$i" == "." ]]; then
+        echo "$spaces $i"
+      else
+        cd "$i"
+        echo "$spaces $i"
+        spaces+="_"
+        func
+        spaces="${spaces%?}"
+        spaces="${spaces%?}"
+        spaces="${spaces%?}"
+        cd ..
+      fi
+  done
+}
+
+func
